@@ -1,5 +1,5 @@
 ---
-permalink: /ri-1/tdd
+permalink: /ir-1/tdd
 ---
 
 # Test Driven Development (TDD)

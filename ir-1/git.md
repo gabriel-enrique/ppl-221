@@ -1,5 +1,5 @@
 ---
-permalink: /ri-1/git
+permalink: /ir-1/git
 ---
 
 # Git

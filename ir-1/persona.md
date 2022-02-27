@@ -1,5 +1,5 @@
 ---
-permalink: /ri-1/persona
+permalink: /ir-1/persona
 ---
 
 # Persona
