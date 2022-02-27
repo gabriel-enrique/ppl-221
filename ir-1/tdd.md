@@ -20,7 +20,7 @@ Proses TDD terdiri dari 3 langkah utama. Setiap langkah harus dijalankan secara 
 
 3. **refactor**: Tahapan ini sebenarnya tidak wajib dilakukan. Pada tahap ini, kita dapat melakukan *refactoring* bagian program yang kita nilai kurang efisien. Walaupun begitu, perlu diingat bahwa ketika melakukan *refactoring*, kita tidak boleh mengubah fungsionalitas program secara keseluruhan. Dengan demikian, test yang sudah ada tidak akan *fail* lagi.
 
-### Penerapan TDD di Project Kami
+### Penerapan TDD di aplikasi kami
 
 Di dalam proyek kami, Jiva, kami menerapkan konsep TDD untuk seluruh *code base* program kami, baik untuk bagian *frontend* maupun *backend*. 
 
