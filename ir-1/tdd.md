@@ -16,26 +16,26 @@ Proses TDD terdiri dari 3 langkah utama. Setiap langkah harus dijalankan secara 
 
 1. **red**: Pada tahap ini, kita tidak boleh langsung mengimplementasi fitur atau program kita. Kita hanya boleh membuat test yang akan memvalidasi bagian program yang kita akan tulis. Lalu setelah selesai mendesain dan membuat test tersebut, kita harus melakukan commit dengan tag \[RED\]. Perhatikan juga pada tahap ini, test yang baru kita buat tersebut harus gagal (*fail*).
 
-  ```js
-  describe('addition function', () => {
-    it('should add 2 given numbers', () => {
-      const result = add(1, 9)
+    ```js
+    describe('addition function', () => {
+      it('should add 2 given numbers', () => {
+        const result = add(1, 9)
 
-      expect(result).toBe(10)
-      expect(result).not.toBe(8)
+        expect(result).toBe(10)
+        expect(result).not.toBe(8)
+      })
     })
-  })
-  ```
+    ```
 
 2. **green**: Kemudian, setelah melakukan tahap **red**, kita baru boleh menulis dan membuat implementasi program yang akan membuat test kita pada tahap **red** tadi lulus (*pass*). Kita juga tidak boleh mengimplementasi fitur yang cakupannya berada di luar test yang kita buat pada tahap **red** sebelumnya. Setelah selesai, lakukan commit dengan tag \[GREEN\].
 
-  ```js
-  function add(a, b) {
-      const result = a + b
-      
-      return result
-  }
-  ```
+    ```js
+    function add(a, b) {
+        const result = a + b
+        
+        return result
+    }
+    ```
 
 3. **refactor**: Tahapan ini sebenarnya tidak wajib dilakukan. Pada tahap ini, kita dapat melakukan *refactoring* bagian program yang kita nilai kurang efisien. Walaupun begitu, perlu diingat bahwa ketika melakukan *refactoring*, kita tidak boleh mengubah fungsionalitas program secara keseluruhan. Dengan demikian, test yang sudah ada tidak akan *fail* lagi.
 
