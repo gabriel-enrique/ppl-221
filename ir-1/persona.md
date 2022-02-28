@@ -28,6 +28,10 @@ Setiap persona tentu akan berbeda formatnya, tergantung dari siapa yang membuat 
 
 - **Harapan**:  Pada bagian ini, kita harus menulis apa harapan dari persona ketika menggunakan apliaksi yang kita akan kembangkan. Tentunya, sebagai pengembang aplikasi yang baik, kita harus bisa memenuhi harapan-harapan persona yang kita buat ini nantinya.
 
+![](https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/01/Screenshot-40-e1516267385749.png?auto=format&q=60&fit=max&w=930)
+
+> Contoh persona
+
 ### Perancangan persona untuk aplikasi kami
 
 Aplikasi yang sedang kami kembangkan memiliki 4 persona. Ada tenaga medis, staff administasi, klinik, pemilik klinik, dan pasien itu sendiri. Masing-masing persona memiliki nama, data demografis, bio, tujuan, dan juga kesulitan. Dengan adanya keempat persona tersebut, ketika sedang merancang aplikasi, kami dapat membayangkan dam berimajinasi bagaimana persona-persona tersebut berinteraksi dengan aplikasi kami. Dari bayangan dan imajinasi tersebut, kami bisa menilai apakah desain aplikasi kami sudah sesuai atau belum. Jika sudah ada desain yang sesuai, maka hal tersebut harus dipertahankan, dan kalau ada desain yang belum sesuai, kami akan melakukan perbaikan sedemikian sehingga desain tersebut sudah sesuai. Harapannya, dengan adanya dan digunakannya persona ini, aplikasi kami nantinya akan diterima dan digunakan dengan mudah oleh pengguna yang sebenarnya. 
