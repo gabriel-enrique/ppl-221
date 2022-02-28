@@ -20,7 +20,7 @@ Proses TDD terdiri dari 3 langkah utama. Setiap langkah harus dijalankan secara 
     describe('addition function', () => {
       it('should add 2 given numbers', () => {
         const result = add(1, 9)
-
+        
         expect(result).toBe(10)
         expect(result).not.toBe(8)
       })
