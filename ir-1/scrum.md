@@ -11,6 +11,7 @@ Scrum adalah salah salah satu metode pengembangan perangkat lunak di mana proses
 Secara singkat, di dalam scrum, akan ada beberapa spesifikasi program yang diperlukan. Spesifikasi program tersebut dinamakan Product Backlog. Di dalam scrum ada satu aktivitas yang dinamakan sprint. Nah, untuk masing-masing sprint, kita boleh bebas memilih Product Backlog mana yang ingin kita kerjakan, atau Product Backlog juga bisa dipecah menjadi task yang lebih kecil lagi. Di sinilah proses 'keroyokan' terjadi.
 
 ![Scrum di dalam permainan rugby](https://upload.wikimedia.org/wikipedia/commons/1/1a/ST_vs_Gloucester_-_Match_-_23.JPG)
+> Scrum di dalam permainan rubgy
 
 ### Work flow di dalam scrum
 
