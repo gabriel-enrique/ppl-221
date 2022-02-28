@@ -28,7 +28,7 @@ Setelah mengetahui peran di dalam scrum, berikut adalah alur kerja dari scrum:
 
 1. **Inisiasi**: Dalam fase ini, product backlog dari *software* yang akan dikembangkan akan dibuat.
 
-2. *Sprint Planning*: Sprint planning adalah fase di mana setiap product backlog akan dinilai bobotnya. Kemudian dari masing-masing product backlog tersebut, akan dipecah lagi menjadi task yang lebih kecil. Setelah itu, PO akan menentukan **sprint goal** untuk sprint yang akan dilakukan. Terakhir, dev team akan memilih product backlog atau task yang akan dikerjakan pada sprint ini. Tentu saja product backlog yang dipilih harus sesuai dengan sprint goal.
+2. **Sprint Planning**: Sprint planning adalah fase di mana setiap product backlog akan dinilai bobotnya. Kemudian dari masing-masing product backlog tersebut, akan dipecah lagi menjadi task yang lebih kecil. Setelah itu, PO akan menentukan **sprint goal** untuk sprint yang akan dilakukan. Terakhir, dev team akan memilih product backlog atau task yang akan dikerjakan pada sprint ini. Tentu saja product backlog yang dipilih harus sesuai dengan sprint goal.
 
 3. **Sprint**: Pada fase ini, dev team mulai menulis *source code* yang sesuai dengan product backlog atau task yang mereka pilih pada saat sprint planning. Dev team juga akan mengadakan rapat harian yang disebut dengan *Daily Standup Meeting*. Daily standup meeting adalah rapat yang membahas tentang progress dari pengembangan *software*.
 
