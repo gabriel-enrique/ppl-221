@@ -124,6 +124,6 @@ export default DashboardTenagaMedis;
 
 Setelah kita buat implementasinya seperti itu, coba jalankan test-nya lagi. Kali ini seharusnya test-nya akan *pass*. Langkah selanjutnya adalah kita melakukan commit dengan pesan \[GREEN\]. Dengan demikian, alur TDD kita sudah selesai. Dalam contoh kasus ini, tidak ada bagian program yang perlu direfactor. Walaupun demikian, kalaupun ada bagian yang diperlukan refactor, maka hasil refactor tersebut tidak boleh membuat test yang sudah dibuat menjadi gagal.
 
-> Contoh di atas merupakan contoh asli dari *codebase*, tetapi yang ditampilkan hanya beberapa bagian saja agar lebih relevan dan tidak membingungkan. Untuk contoh penuhnya, dapat diakses melalui tautan berikut: \
+> Contoh di atas merupakan contoh asli dari *codebase*, tetapi yang ditampilkan hanya beberapa bagian saja agar lebih relevan dan tidak membingungkan. Untuk contoh penuhnya, dapat diakses melalui tautan berikut:
 > - [File test](https://gitlab.cs.ui.ac.id/ppl-fasilkom-ui/2022/Kelas-B/pencari-kelulusan/jiva-frontend/-/blob/staging/__tests__/tenagaMedis/index.test.jsx)
 > - [File implementasi](https://gitlab.cs.ui.ac.id/ppl-fasilkom-ui/2022/Kelas-B/pencari-kelulusan/jiva-frontend/-/blob/staging/pages/klinik/%5BidKlinik%5D/%5BidCabang%5D/tenaga-medis/index.js)
