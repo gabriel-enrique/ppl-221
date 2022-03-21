@@ -12,3 +12,4 @@ Gabriel Enrique - PPL B
 ### Individual Review 2
  - [Git](https://gabriel-enrique.github.io/ppl-221/ir-2/git)
  - [Clean Code](https://gabriel-enrique.github.io/ppl-221/ir-2/clean-code)
+ - [Software Quality Assurance (SQA)](https://gabriel-enrique.github.io/ppl-221/ir-2/sqa)
