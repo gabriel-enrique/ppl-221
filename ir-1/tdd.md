@@ -39,7 +39,11 @@ Proses TDD terdiri dari 3 langkah utama. Setiap langkah harus dijalankan secara 
 
 3. **refactor**: Tahapan ini sebenarnya tidak wajib dilakukan. Pada tahap ini, kita dapat melakukan *refactoring* bagian program yang kita nilai kurang efisien. Walaupun begitu, perlu diingat bahwa ketika melakukan *refactoring*, kita tidak boleh mengubah fungsionalitas program secara keseluruhan. Dengan demikian, test yang sudah ada tidak akan *fail* lagi.
 
-![](https://womanonrails.com/images/tdd-basics/tdd.gif)
+<p align="center">
+  <img src="https://womanonrails.com/images/tdd-basics/tdd.gif"/>
+</p>
+
+> Diagram alur penerapan TDD. Sumber: [womanonrails.com](https://womanonrails.com/tdd-basic).
 
 ### Penerapan TDD di aplikasi kami
 
@@ -51,7 +55,9 @@ Dalam menerapkan konsep TDD ketika membangun *frontend* aplikasi kami, saya sela
 
 Di bawah ini merupakan salah satu contoh penerapan TDD yang diambil langsung dari *codebase* kami. Sebagai gambaran, tampilan yang ingin dibuat adalah seperti berikut.
 
-![](./img/DashboardTenagaMedis.png)
+<p align="center">
+  <img src="./img/DashboardTenagaMedis.png"/>
+</p>
 
 Sebelum kita bisa mulai membuat tampilan tersebut, kita harus membuat test-nya terlebih dahulu. Di dalam test tersebut, kita akan memeriksa apakah komponen-komponen utama dari tampilan halaman tersebut sudah hadir atau tidak. Untuk itu, kita dapat menggunakan bantuan [Jest Framework](https://jestjs.io/).
 
