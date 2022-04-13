@@ -38,4 +38,84 @@ Ada beberapa cara yang bisa dilakukan agar kita bisa menerapkan clean code denga
 
 ### Penerapan clean code di codebase kami
 
-Proyek kami sangat memerlukan implementasi clean code yang baik untuk seluruh codebase kami. Ini menjadi sangat penting karena kami bekerja dalam sebuah tim. Semua orang nanti akan melanjutkan program kita dan juga menggunakan prorgam kita sebagai acuan untuk program mereka. Oleh karena itu, kita harus menerapkan clean code yang baik agar kita tidak menylitkan teman-teman kita. Terlebih lagi, untuk melakukan merge branch via merge request, kita harus melakukan code review terlebih dahulu. Kalau misalnya program yang kita buat tidak dapat dibaca karena kita tidak menerapakan clean code dengan baik, maka bagaimana caranya teman kita bisa melakukan code review? Justru nanti ditakutkan kalau teman kita gagal untuk melihat keslahan-kesalahan yang ada di program kita karena meraka terlalu pusing dan kesulitan untuk membaca dan memahami program yang kita buat.
+Proyek kami sangat memerlukan implementasi clean code yang baik untuk seluruh *codebase* kami. Ini menjadi sangat penting karena kami bekerja dalam sebuah tim. Semua orang nanti akan melanjutkan program kita dan juga menggunakan program kita sebagai acuan untuk program mereka. Oleh karena itu, kita harus menerapkan clean code yang baik agar kita tidak menylitkan teman-teman kita. Terlebih lagi, untuk melakukan merge branch via merge request, kita harus melakukan code review terlebih dahulu. Kalau misalnya program yang kita buat tidak dapat dibaca karena kita tidak menerapakan clean code dengan baik, maka bagaimana caranya teman kita bisa melakukan code review? Justru nanti ditakutkan kalau teman kita gagal untuk melihat kesalahan-kesalahan yang ada di program kita karena meraka terlalu pusing dan kesulitan untuk membaca dan memahami program yang kita buat.
+
+Berikut adalah beberapa *code snippet* yang diambil langsung dari proyek kami yang dapat menunjukkan penerapan clean code di dalam proyek kami.
+
+```py
+    # ...
+
+    def test_create_jadwal_tenaga_medis_invalid(self):
+        self.assertEqual(JadwalTenagaMedis.objects.count(), 0)
+        data = {
+            # all missing fields
+        }
+        url = reverse(self.create_jadwal_tenaga_medis_url, kwargs={ "tenaga_medis_id" : self.tenaga_medis_profile.id })
+        response = self.client.post(url, data=data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(JadwalTenagaMedis.objects.count(), 0)
+    
+    # ...
+```
+
+> Contoh di atas menunjukkan penggunaan comments yang baik. Fungsi test tersebut harus jelas untuk dibaca. Tidak ada baris di dalam fungsi tersebut yang perlu diberi komentar karena memang sudah jelas apa yang dilakukan pada setiap barisnya. Satu-satunya comment yang dinilai perlu untuk ditulis adalah pada bagian `data`. Comment tersebut perlu untuk menandakan bahwa memang tidak ada apa-apa di dalam `dict` tersebut agar yang membaca fungsi tersebut tidak kebingungan.
+
+```py
+# ...
+
+class JadwalTenagaMedisAPI(APIView):
+
+    permission_classes = [
+        IsStafPermission
+    ]
+
+    def get(self, request: Request, jadwal_tenaga_medis_id: int, format=None):
+        jadwal_tenaga_medis = get_object(JadwalTenagaMedis, pk=jadwal_tenaga_medis_id)
+        if jadwal_tenaga_medis is None:
+            return Response(
+                { "error": f"no 'jadwal tenaga medis' found with id : {jadwal_tenaga_medis_id}" },
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        serializer = JadwalTenagaMedisSerializer(jadwal_tenaga_medis)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+    def patch(self, request: Request, jadwal_tenaga_medis_id: int, format=None):
+        jadwal_tenaga_medis = get_object(JadwalTenagaMedis, pk=jadwal_tenaga_medis_id)
+        if jadwal_tenaga_medis is None:
+            return Response(
+                { "error": f"no 'jadwal tenaga medis' found with id : {jadwal_tenaga_medis_id}" },
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        serializer = JadwalTenagaMedisSerializer(instance=jadwal_tenaga_medis, data=request.data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except serializers.ValidationError as errors:
+                errors = json.loads(json.dumps(errors.__dict__["detail"]))
+                return Response(errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request: Request, jadwal_tenaga_medis_id: int, format=None):
+        jadwal_tenaga_medis = get_object(JadwalTenagaMedis, pk=jadwal_tenaga_medis_id)
+        if jadwal_tenaga_medis is None:
+            return Response(
+                { "error": f"no 'jadwal tenaga medis' found with id : {jadwal_tenaga_medis_id}" },
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        jadwal_tenaga_medis.delete()
+        return Response(
+            { "success": "delete success" }, 
+            status=status.HTTP_200_OK
+        )
+
+# ...
+```
+
+> Contoh di atas menggambarkan beberapa konsep-konsep clean code.
+> - Komentar yang efisien: Tidak ada comments yang perlu untuk `class` di atas karena memang setiap bagiannya sudah jelas dan tidak memerlukan penjelasan tambahan dari comments.
+> - Penamaan yang baik: Nama-nama fungsi dan variabel pada `class` tersebut sudah sangat dapat menggambarkan apa yang dilakukan dan disimpan oleh fungsi dan variabel yang bersangkutan.
+> - Implementasi fungsi yang sederhana: Fungsi-fungsi yang dibuat telah didesain agar sederhana. Fungsi yang ditulis tidak terlalu panjang dan hanya melakukan satu hal saja.
+> - Exception handling: Jika terjadi error, maka pesan error yang diberikan akan memberikan penjelasan mengapa terjadi error agar nantinya kalau ada rekan anggota yang mendapatkan error tersebut, mereka bisa langsung tahu apa masalahnya. 
+> - Hindari duplikasi kode: Tidak ada duplikasi kode yang membuat `class` di atas menjadi panjang. Semua kode ditulis sedemikian sehingga tidak terjadi duplikasi kode.
+> - Layout yang baik: Penggunaan whitespace dimanfaatkan dengan baik. Kita bisa membedakan yang mana fungsi yang mana `class` hanya dari melihat seklias (*skimming*).
