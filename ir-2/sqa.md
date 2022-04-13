@@ -12,7 +12,7 @@ Software Quality Assurance (SQA) adalah aspek dari progam yang mencakup kualitas
 
 1. Reliability
 
-    Aspek reliability yang diukur biasanya mencakup bugs pada program. SQA software mempunyai kemampuan untuk mendeteksi adanya bugs di dalam program yang di-scan. Tentunya kita harus memastikan bahwa progam yang kita buat bug-free. Karena siapa yang ingin menggunakan program yang mempunyai bugs? Tentunya semua orang menginginkan program yang bebas dari bugs. Oleh karena itu, SQA software akan menunjukkan ada berapa banyak bugs beserta lokasinya pada program.
+    Aspek reliability yang diukur biasanya mencakup *bugs* pada program. SQA software mempunyai kemampuan untuk mendeteksi adanya *bugs* di dalam program yang di-scan. Tentunya kita harus memastikan bahwa progam yang kita buat *bug*-free. Karena siapa yang ingin menggunakan program yang mempunyai *bugs*? Tentunya semua orang menginginkan program yang bebas dari *bugs*. Oleh karena itu, SQA software akan menunjukkan ada berapa banyak *bugs* beserta lokasinya pada program.
 
 2. Security 
 
@@ -20,11 +20,11 @@ Software Quality Assurance (SQA) adalah aspek dari progam yang mencakup kualitas
 
 3. Maintainability
 
-    Code smells adalah salah satu penghambat proses pengembangan. Code smells memang tidak berpengaruh besar bagi user. Tetapi, code smells dapat menumpuk dengan cepat kalau kita tidak berhati-hati. Kalau code smell kita terlalu banyak, program yang kita buat bisa akan sulit untuk di-maintain. Oleh karena itu, code smell harus diatasi. SQA software bahkan tidak hanya menunjukkan ada berapa banyak titik code smell yang ada di program kita, tetapi SQA software juga dapat mengkalkulasi kira-kira kita akan butuh waktu berapa lama untuk menghilangkan code smell tersebut. Kalau kita tidak atasi dengan cepat, jangan kaget kalau nanti waktu yang dibutuhkan untuk mengurus semua code smell bisa sampai berjam-jam.
+    Code smells adalah salah satu penghambat proses pengembangan. Code smells memang tidak berpengaruh besar bagi user. Tetapi, code smells dapat menumpuk dengan cepat kalau kita tidak berhati-hati. Kalau code smell kita terlalu banyak, program yang kita buat bisa akan sulit untuk di-*maintain*. Oleh karena itu, code smell harus diatasi. SQA software bahkan tidak hanya menunjukkan ada berapa banyak titik code smell yang ada di program kita, tetapi SQA software juga dapat mengkalkulasi kira-kira kita akan butuh waktu berapa lama untuk menghilangkan code smell tersebut. Kalau kita tidak atasi dengan cepat, jangan kaget kalau nanti waktu yang dibutuhkan untuk mengurus semua code smell bisa sampai berjam-jam.
 
 4. Coverage
 
-    Coverage akan munjukan sebarapa banyak bagian prorgam yang sudah di-cover dengan testing. Semakin tinggi nilai coverage, maka program kita akan semakin aman dari error akibat perubahan. Karena kalau dikemudian hari dilakukan perubahan yang salah, test-nya akan error. Kalau coverage yang kita miliki itu rendah, maka ditakutkan ada bagian program yang jika diubah dan ubahannya salah, akan menyebabkan hal-hal yang tidak diinginkan. SQA software tidak hanya akan menunjukkan persentasi coverage, teatpi juga akan menunjukan bagian program mana yang belum di-cover oleh test sehingga kita bisa langsung fokus untuk membauat test untuk bagian tersebut.
+    Coverage akan munjukan sebarapa banyak bagian prorgam yang sudah di-*cover* dengan testing. Semakin tinggi nilai coverage, maka program kita akan semakin aman dari error akibat perubahan. Karena kalau dikemudian hari dilakukan perubahan yang salah, test-nya akan error. Kalau coverage yang kita miliki itu rendah, maka ditakutkan ada bagian program yang jika diubah dan ubahannya salah, akan menyebabkan hal-hal yang tidak diinginkan. SQA software tidak hanya akan menunjukkan persentasi coverage, teatpi juga akan menunjukan bagian program mana yang belum di-*cover* oleh test sehingga kita bisa langsung fokus untuk membauat test untuk bagian tersebut.
 
 5. Duplications
 
@@ -33,3 +33,7 @@ Software Quality Assurance (SQA) adalah aspek dari progam yang mencakup kualitas
 ### Penerapan SQA di proyek kami
 
 Kami menggunakan bantuan Sonarqube untuk memeriksa kualitas dari progam yang kami buat. Sonarqube akan melakukan scan untuk branch-branch tertentu seperti branch master, staging, dan PBI. Scan tersebut akan berjalan otomatis setiap kali ada merge request yang bersesuaian dengan bentuan GitLab CI. Dari hasi scan tersebut, kita bisa melihat berbagai telemetri dari program yang baru saja di-scan tersebut. Kita bisa melihat apakah ada bugs, apakah ada titik keamanan yang rawan, dan apakah program kita terhindar dari codesmells, dan kalaupun ada, kira-kira berapa waktu yang dibutuhkan untuk menghilangkan code smell tersebut. Sonarqube juga akan memeriksa coverage dari test yang kita buat. Selain itu, sonarqube juga bisa menunjukan seberapa banyak baris kode yang mengalami duplikasi.
+
+![](./img/ScanResult.JPG)
+
+> Hasil Sonar Scan untuk branch `PBI-7-PengaturanJadwalPraktik`
