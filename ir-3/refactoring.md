@@ -25,3 +25,40 @@ Kita juga dapat melakukan refactoring pada bagian-bagian program yang dinilai me
 Di dalam proyek kami, tidak jarang kami melakukan refactoring. Jumlah bug yang muncul di dalam program tentunya tidak sedikit. Hasil scan dari quality gate juga seringkali menunjukan hasil yang kurang memuaskan karena adanya *code smells* dan *duplications* yang banyak. Oleh karena itu kami sering sekali melakukan refactoring.
 
 Biasanya refactoring yang dilakukan adalah membuat program yang sudah ada menjadi lebih mudah untuk dibaca dan dipahami, mengingat bahwa semua anggota secara aktif perlu sering melihat dan memahami banyak bagian program. Kami biasanya mengganti nama variabel agar lebih mudah dipahami, menambahkan *whitespaces*  agar program lebih tersegmentasi sehingga lebih mudah dibaca, dan juga memasukkan bagian program yang sering muncul ke dalam suatu fungsi agar program yang ditulis tidak tingkat memilikki duplikasi yang tingga.
+
+**Sebelum refactoring:**
+
+```js
+const lineChecker = (line, isFirstLine) => {
+  let document = ``;
+
+  if (line !== "" && isFirstLine) {
+    document += `<h1>${line}</h1>`;
+  } else if (line !== "" && !isFirstLine) {
+    document += `<p>${line}</p>`;
+  } else if (line === "") {
+    document += "<br />";
+  }
+
+  return document;
+
+};
+```
+
+**Sesudah refactoring:**
+
+```js
+const lineChecker = (line, isFirstLine) => {
+  if (line === "") {
+    return "<br />";
+  }
+
+  if (isFirstLine) {
+    return `<h1>${line}</h1>`;
+  } else {
+    return `<p>${line}</p>`;
+  }
+};
+```
+
+> Contoh sebelum dan sesudah refactoring. Sumber code snippet: [How would you refactor this JS function?](https://dev.to/p42/how-would-you-refactor-this-js-function-4n71)
