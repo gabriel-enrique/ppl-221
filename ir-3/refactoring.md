@@ -20,12 +20,6 @@ Refactoring juga dapat dilakukan ketika kita sedang mengatasi suatu permasalahan
 
 Kita juga dapat melakukan refactoring pada bagian-bagian program yang dinilai memiliki performa yang kurang baik. Misalnya ada bagian di dalam program kita yang memerlukan sorting. Tetapi algoritma sorting yang digunakan masih pelan seperti bubble sort. Kita dapat melakukan refactoring pada bagian program tersebut agar menggunakan algoritma sorting yang lebih cepat misalnya merge sort. Tentunya untuk kasus refactoring yang seperti ini, ada baiknya kalau bagian program sudah ada testnya, agar ketika nanti kita selesai melakukan refactoring, bagian program tersebut masih bekerja sesuai dengan spesifikasinya.
 
-### Penerapan refactoring di proyek kami
-
-Di dalam proyek kami, tidak jarang kami melakukan refactoring. Jumlah bug yang muncul di dalam program tentunya tidak sedikit. Hasil scan dari quality gate juga seringkali menunjukan hasil yang kurang memuaskan karena adanya *code smells* dan *duplications* yang banyak. Oleh karena itu kami sering sekali melakukan refactoring.
-
-Biasanya refactoring yang dilakukan adalah membuat program yang sudah ada menjadi lebih mudah untuk dibaca dan dipahami, mengingat bahwa semua anggota secara aktif perlu sering melihat dan memahami banyak bagian program. Kami biasanya mengganti nama variabel agar lebih mudah dipahami, menambahkan *whitespaces*  agar program lebih tersegmentasi sehingga lebih mudah dibaca, dan juga memasukkan bagian program yang sering muncul ke dalam suatu fungsi agar program yang ditulis tidak tingkat memilikki duplikasi yang tingga.
-
 **Sebelum refactoring:**
 
 ```js
@@ -62,3 +56,9 @@ const lineChecker = (line, isFirstLine) => {
 ```
 
 > Contoh sebelum dan sesudah refactoring. Sumber code snippet: [How would you refactor this JS function?](https://dev.to/p42/how-would-you-refactor-this-js-function-4n71)
+
+### Penerapan refactoring di proyek kami
+
+Di dalam proyek kami, tidak jarang kami melakukan refactoring. Jumlah bug yang muncul di dalam program tentunya tidak sedikit. Hasil scan dari quality gate juga seringkali menunjukan hasil yang kurang memuaskan karena adanya *code smells* dan *duplications* yang banyak. Oleh karena itu kami sering sekali melakukan refactoring.
+
+Biasanya refactoring yang dilakukan adalah membuat program yang sudah ada menjadi lebih mudah untuk dibaca dan dipahami, mengingat bahwa semua anggota secara aktif perlu sering melihat dan memahami banyak bagian program. Kami biasanya mengganti nama variabel agar lebih mudah dipahami, menambahkan *whitespaces*  agar program lebih tersegmentasi sehingga lebih mudah dibaca, dan juga memasukkan bagian program yang sering muncul ke dalam suatu fungsi agar program yang ditulis tidak tingkat memilikki duplikasi yang tinggi.
