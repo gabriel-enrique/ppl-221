@@ -18,3 +18,7 @@ Gabriel Enrique - PPL B
  - [DevOps](https://gabriel-enrique.github.io/ppl-221/ir-3/devops)
  - [Refactoring](https://gabriel-enrique.github.io/ppl-221/ir-3/refactoring)
  - [Testing](https://gabriel-enrique.github.io/ppl-221/ir-3/testing)
+
+### Individual Review 4
+ - [Visual Design](https://gabriel-enrique.github.io/ppl-221/ir-4/visual-design)
+ - [Usability Testing and Evaluation](https://gabriel-enrique.github.io/ppl-221/ir-4/usability-testing)
