@@ -61,4 +61,31 @@ const lineChecker = (line, isFirstLine) => {
 
 Di dalam proyek kami, tidak jarang kami melakukan refactoring. Jumlah bug yang muncul di dalam program tentunya tidak sedikit. Hasil scan dari quality gate juga seringkali menunjukan hasil yang kurang memuaskan karena adanya *code smells* dan *duplications* yang banyak. Oleh karena itu kami sering sekali melakukan refactoring.
 
-Biasanya refactoring yang dilakukan adalah membuat program yang sudah ada menjadi lebih mudah untuk dibaca dan dipahami, mengingat bahwa semua anggota secara aktif perlu sering melihat dan memahami banyak bagian program. Kami biasanya mengganti nama variabel agar lebih mudah dipahami, menambahkan *whitespaces*  agar program lebih tersegmentasi sehingga lebih mudah dibaca, dan juga memasukkan bagian program yang sering muncul ke dalam suatu fungsi agar program yang ditulis tidak tingkat memilikki duplikasi yang tinggi.
+Biasanya refactoring yang dilakukan adalah membuat program yang sudah ada menjadi lebih mudah untuk dibaca dan dipahami, mengingat bahwa semua anggota secara aktif perlu sering melihat dan memahami banyak bagian program. Kami biasanya mengganti nama variabel agar lebih mudah dipahami, menambahkan *whitespaces* agar program lebih tersegmentasi sehingga lebih mudah dibaca, dan juga memasukkan bagian program yang sering muncul ke dalam suatu fungsi agar program yang ditulis tidak tingkat memilikki duplikasi yang tinggi.
+
+Berikut adalah contoh refactoring yang dilakukan pada source code kami.
+
+**Sebelum refactoring:**
+
+```py
+def compose_email_body(context):
+    with open("klinik/templates/mail_template.html") as template_file:
+        template = template_file.read()
+        template = template.replace("{{ nik }}", context["nik"])
+        template = template.replace("{{ tanggal }}", context["tanggal"])
+        template = template.replace("{{ jam_kedatangan }}", context["jam_kedatangan"])
+        template = template.replace("{{ dokter }}", context["dokter"])
+    return template
+```
+
+**Sesudah refactoring:**
+
+```py
+def compose_email_body(context):
+    with open("klinik/templates/mail_template.html") as template_file:
+        for key, value in context.items():
+            template = template.replace("{{ %s }}" % (key), value)
+    return template
+```
+
+Bisa kita lihat bahwa sebelum refactoring, elemen-elemen yang diambil dari `context` hanya di-*hardcode* saja. Dengan implementasi yang masih seperti ini, penambahan parameter pada `template` mengakibatkan kita harus menambah satu baris tambahan untuk melakukan `replace()` untuk `context` yang baru. Oleh karena itu, refactoring diperlukan agar fungsi tersebut bisa lebih *robust*. Dengan menggunakan versi yang sudah di-refactor, kita tidak harus mengubah fungsi tersebut apabila kita menambahkan parameter pada `template`.
