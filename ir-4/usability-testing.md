@@ -6,7 +6,7 @@ permalink: /ir-4/usability-testing
 
 ### Apa itu Usability Testing?
 
-Setelah kita membuat suatu fitur untuk aplikasi kita, kita harus memeriksa apakah fitur tersebut sudah bejalan dengan baik. Salah satu cara untuk memeriksanya adalah dengan [testing](/ppl-221/ir-4/usability-testing) dan menerapkan proses [TDD](/ppl-221/ir-1/tdd). Tetapi testing dan TDD saja tidak cukup karena testing dan TDD hanya memeriksa kebenaran sistem secara internal source code saja. Tetapi implementasi sebenarnya mungkin belum sempurna. Oleh karena itulah kita membutuhkan Usability Testing.
+Setelah kita membuat suatu fitur untuk aplikasi kita, kita harus memeriksa apakah fitur tersebut sudah bejalan dengan baik. Salah satu cara untuk memeriksanya adalah dengan [testing](/ppl-221/ir-3/testing) dan menerapkan proses [TDD](/ppl-221/ir-1/tdd). Tetapi testing dan TDD saja tidak cukup karena testing dan TDD hanya memeriksa kebenaran sistem secara internal source code saja. Tetapi implementasi sebenarnya mungkin belum sempurna. Oleh karena itulah kita membutuhkan Usability Testing.
 
 Usability testing adalah proses pengecekan penggunaan fitur secara langusng. Sehingga error apapun yang terjadi selama proses usability testing dapat langsung diketahui dan diperbaiki. Karena kalau tidak kita perbaiki, maka pasti pengguna akan mengalami error yang sama tersebut. Tentunya, sama dengan konsep coverage, semakin detil, banyak, dan lenkap usability test cases kita, maka kita bisa lebih memastikan bahwa aplikasi yang kita buat *error-free*.
 
