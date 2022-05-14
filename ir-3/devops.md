@@ -84,4 +84,4 @@ Sesuai dengan spesifikasi PPL 2021, ada beberapa pengaturan yang harus digunakan
 
 Untuk feature branch yang ingin di-merge ke PBI branch, kami hanya menjalankan test saja agar kami bisa memastikan bahwa program yang kami tulis memang lolos uji. Untuk PBI branch yang ingin di-merge ke staging, Pipeline akan menjalankan Job tambahan untuk melakukan sonarscan. Sedangkan untuk branch staging dan master, ada Job tambahan yang akan melakukan deployment ke staging environment dan release environment.
 
-Dengan adanya GitLab CI ini, alur kerja kelompok kami menjadi lebih cepat dan efisien, karena ada banyak hal yang harus diperiksa dan dilakukann yang dapat dijalankan secara otomatis oleh Pipeline.
+Dengan adanya GitLab CI ini, alur kerja kelompok kami menjadi lebih cepat dan efisien, karena ada banyak hal yang harus diperiksa dan dilakukan yang dapat dijalankan secara otomatis oleh Pipeline.
