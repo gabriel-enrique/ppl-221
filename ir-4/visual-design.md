@@ -70,9 +70,9 @@ Sebelum mulai membuat sistem, kita harus mendesain sistem kita terlebih dahulu. 
 
 Untuk meningkatkan aspek visual design dari sistem aplikasi yang kami buat, kami melakukan *wireframing* dan *prototyping* terlebih dahulu sebelum masuk ke proses penulisan *source code*. Prototype dan wireframe yang kami buat juga tidak hanya satu. Kami membuat beberapa versi wireframe dan prototype dan dari semua wireframe dan prototype tersebut kami melakukan seleksi mana wireframe dan prototype yang terbaik.
 
-![](./img/DashboardWF.png)
+![](./img/TambahWF.png)
 
-> Wireframe halaman Dashboard Tenaga Medis
+> Wireframe halaman Tambah Tenaga Medis
 
 Wireframe dan prototype yang kami buat juga mengikuti Nielsen’s 10 Usability Heuristics. Salah satunya adalah usability heuristic "**Match between system and the real world**". Label-label dan gambar yang kami gunakan kami sesuaikan dengan pengguna kami yaitu tenaga medis dan staff rumah sakit Indoneisa. Oleh karena itu kami menggunakan kosa kata Bahasa Indonesia yang sudah pasti dipahami oleh tenaga medis dan staff rumah sakit di Indonesia. 
 
